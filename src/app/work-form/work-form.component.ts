@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Work } from '../work';
 @Component({
   selector: 'app-work-form',
@@ -6,10 +6,10 @@ import { Work } from '../work';
   styleUrls: ['./work-form.component.css']
 })
 export class WorkFormComponent implements OnInit {
-  newWork = new Work(0, "", "", new Date());
-  @Output() addWork=new EventEmitter<Work>();
+  newWork = new Work(0, "", "", "", new Date());
+  @Output() addWork = new EventEmitter<Work>();
 
-  submitWork(){
+  submitWork() {
     this.addWork.emit(this.newWork);
   }
   constructor() { }

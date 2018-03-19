@@ -11,6 +11,20 @@
 
         </div>
       </div>
+
+
+      <!-- Author Form -->
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author" [(ngModel)]="newWork.author" name="author" #author="ngModel" required>
+
+        <div [hidden]="author.valid || name.pristine" class="alert alert-danger">
+          <p> Author is Required</p>
+
+        </div>
+      </div>
+
+
       <!-- Description Input -->
       <div class="form-group">
         <label for="description">Description</label>
@@ -21,6 +35,8 @@
         </div>
 
       </div>
+
+
       <!-- Date Input -->
       <div class="form-group">
         <label for="complete">Completion</label>
