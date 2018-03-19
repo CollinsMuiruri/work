@@ -1,5 +1,6 @@
-import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
-import {Work} from '../work'
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Work } from '../work'
+import { Mwangi } from '../mwangi'
 
 @Component({
   selector: 'app-work-details',
@@ -8,10 +9,10 @@ import {Work} from '../work'
 })
 export class WorkDetailsComponent implements OnInit {
 
-  @Input() work:Work;
-  @Output() isComplete= new EventEmitter<boolean>();
+  @Input() work: Work;
+  @Output() isComplete = new EventEmitter<boolean>();
 
-  workDelete(complete:boolean){
+  workDelete(complete: boolean) {
     this.isComplete.emit(complete);
   }
   constructor() { }
