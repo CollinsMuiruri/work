@@ -8,6 +8,9 @@ import { WorkDetailsComponent } from './work-details/work-details.component';
 import { StrikethroughDirective } from './strikethrough.directive';
 import { DateCountPipe } from './date.pipe';
 import { WorkFormComponent } from './work-form/work-form.component';
+import { DownvoteComponent} from './downvote';
+import { UpvoteComponent} from './upvote';
+import { VotesComponent } from './votes/votes.component';
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { WorkFormComponent } from './work-form/work-form.component';
     WorkDetailsComponent,
     StrikethroughDirective,
     DateCountPipe,
-    WorkFormComponent
+    WorkFormComponent,
+    DownvoteComponent,
+    UpvoteComponent,
+    VotesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-click-me3',
+  selector: 'app-downvote',
   template: `
-    <button (click)="onClickMe3($event)">No! .. Click me!</button>
+    <button (click)="onDownvote($event)">No! .. Click me!</button>
     {{clickMessage}}`
 })
-export class ClickMe3Component {
+export class DownvoteComponent {
   clickMessage = 'yes';
   clicks = 1;
 
-  onClickMe3(event: any) {
+  onDownvote(event: any) {
     let evtMsg = event ? ' Event target is ' + event.target.tagName  : '';
     this.clickMessage = (`Click #${this.clicks--}. ${evtMsg}`);
   }

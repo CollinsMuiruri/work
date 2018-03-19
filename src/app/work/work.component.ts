@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Work} from '../work'
+import {DownvoteComponent} from '../downvote'
+import {UpvoteComponent} from '../upvote'
 
 @Component({
   selector: 'app-work',
