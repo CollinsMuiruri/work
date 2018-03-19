@@ -1,0 +1,23 @@
+<body style="background-image:Url(../assets/pinjj.jpg)">
+
+<h1>Quotes</h1>
+<hr>
+<div class="container">
+  <div class="row">
+      <app-work-form (addWork)="addNewWork($event)"></app-work-form>
+    </div>
+</div>
+<ul>
+<li *ngFor="let work of works;let i = 'index' ">
+
+  <h4 id="{{i}}" appStrikethrough>{{work.name}} due on {{work.completeDate|date|uppercase}}</h4>
+  <button class="btn btn-primary" (click)='toogleDetails(i)'>View Quote</button>
+
+
+  <div class="row" *ngIf="work.showDescription">
+    <app-work-details  [work]='work' (isComplete)='deleteWork($event,i)'></app-work-details>
+  </div>
+</li>
+</ul>
+<p *ngIf='works.length > 5'>Wow..your'e a busy one!!</p>
+</body>
