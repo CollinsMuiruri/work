@@ -1,25 +1,35 @@
-<body style="background-image:Url(../assets/pinjj.jpg)">
+<link href="https://fonts.googleapis.com/css?family=Cagliostro" rel="stylesheet">
+<body>
 
 <h1>Quotes</h1>
 <p>Welcome to where you can add your quotes and have them either upvoted or downvoted.</p>
 <hr>
+<aside>
+
 <div class="container">
   <div class="row">
       <app-work-form (addWork)="addNewWork($event)"></app-work-form>
     </div>
 </div>
+
+</aside>
+
 <ul>
 <li *ngFor="let work of works;let i = 'index' ">
 
   <h4 id="{{i}}" appStrikethrough>{{work.name}} due on {{work.completeDate|date|uppercase}}</h4>
   <button class="btn btn-primary" (click)='toogleDetails(i)'>View Quote</button>
 
+<app-downvote></app-downvote>
+<app-upvote></app-upvote>
+
 
   <div class="row" *ngIf="work.showDescription">
-    <app-work-details  [work]='work' (isComplete)='deleteWork($event,i)'></app-work-details>
+      <app-work-details  [work]='work' (isComplete)='deleteWork($event,i)'></app-work-details>
   </div>
+
 </li>
 </ul>
-<p *ngIf='works.length > 5'>Wow..Such wisdom!!</p>
+<p *ngIf='works.length > 5'> WOW!!..Such wisdom!!</p>
 
 </body>
